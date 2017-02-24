@@ -9,7 +9,7 @@ $ git clone https://github.com/jsmojo/shortstack-template
 ```
 
 ```
-$ cd Product-Swatches 
+$ cd shortstack-template
 ```
 
 ```
