@@ -16,7 +16,6 @@ $ cd shortstack-template
 $ npm install 
 ```
 
-
 ```
 $ gulp
 ```
