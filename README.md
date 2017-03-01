@@ -5,11 +5,11 @@ Simple short stack template build to be reused
 ## Installing
 
 ```
-$ git clone https://github.com/jsmojo/shortstack-template
+$ git clone https://github.com/jsmojo/selectmenu-to-gridmenu
 ```
 
 ```
-$ cd shortstack-template
+$ cd selectmenu-to-gridmenu
 ```
 
 ```
