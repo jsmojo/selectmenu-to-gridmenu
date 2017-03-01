@@ -84,7 +84,8 @@ gulp.task('tsc', function () {
             noImplicitAny: true,
             out: 'main.js'
         }))
-        .pipe(gulp.dest(config.paths.dist + '/scripts'));
+        .pipe(gulp.dest(config.paths.dist + '/scripts'))
+        .pipe(connect.reload());
 });
 
 gulp.task('less', function () {
@@ -97,7 +98,7 @@ gulp.task('less', function () {
 
 gulp.task('watch', function () {
     gulp.watch(config.paths.html, ['html']);
-    gulp.watch(config.paths.js, ['js']);
+    gulp.watch(config.paths.tsc, ['tsc']);
     gulp.watch(config.paths.less, ['less']);
     gulp.watch(config.paths.img, ['img']);
 });
