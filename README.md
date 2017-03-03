@@ -20,4 +20,4 @@ $ npm install
 $ gulp
 ```
 
-![alt tag](https://github.com/selectmenu-to-gridmenu/demo.jpg)
+![alt tag](https://github.com/jsmojo/selectmenu-to-gridmenu/blob/master/demo.jpg)
