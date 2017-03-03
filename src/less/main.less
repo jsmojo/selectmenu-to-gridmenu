@@ -1,58 +1,43 @@
-.ProductDetails .KSD_button_tab-container__buttons--big.active,
-.ProductDetails .KSD_button_tab-container__buttons--tall.active {
+
+.ProductDetails  {
+    .grid_menu_tab-container__buttons--big.active,
+    .grid_menu_tab-container__buttons--tall.active {
         color: #fff !important;
         background-color: hsl(299, 49%, 0%) !important;
     }
 
     .big-tall-tab-new, 
     .select-size-label, 
-    .ProductDetails select.size {
+    select.select-menu {
         //display: none !important;
         opacity: .5;
     }
 
-
-    .product-wrap .left-side .left-right .wrap-left-right .details {
-        padding-bottom: 0;
-        margin-bottom: a0;
-        border-bottom: none;
-    }
-        .product-wrap .left-side .left-right .wrap-left-right .details .details-more {
-            margin-bottom: 0;
-            width: auto;
-        }
-
-    .ProductDetails .FreeExchangeWrapper .free-exchange-bar.badge {
-        top: 45px;
-    }
-    .ProductDetails .KSD-swatch-block-container {
+    .grid-menu-swatch-block-container {
         border: 1px solid hsl(299, 0%, 51%);
         padding: 10px;
-    }
-    .ProductDetails .KSD-swatch-block-container .grid-menu-option {
-        display: inline-block;
-        border: 1px solid hsl(299, 2%, 83%);
-        line-height: 30px;
-        width: 90px;
-        height: 30px;
-        text-align: center;
-        margin: 0 8px 8px 0;
-        cursor: pointer;
-    }
-        .ProductDetails .KSD-swatch-block-container .grid-menu-option.active {
-            color: #fff;
-            background-color: hsl(299, 0%, 0%);
+
+        .grid-menu-option {
+            display: inline-block;
+            border: 1px solid hsl(299, 2%, 83%);
+            line-height: 30px;
+            width: 90px;
+            height: 30px;
+            text-align: center;
+            margin: 0 8px 8px 0;
+            cursor: pointer;
+
+            &.active {
+                color: #fff;
+                background-color: hsl(299, 0%, 0%);
+            }
         }
-        .ProductDetails .KSD-swatch-block-container .grid-menu-option.p_outOfStock {
-            color: gray;
-            background-color: #fff;
-            background-image: url("//secureimages.plussizetech.com/images/site_images/ksd/p_outOfStock.png");
-            background-repeat: no-repeat;
-            background-size: 92px 32px;
-        }
-    .ProductDetails .KSD_first_option_text {
-            color: #666;
-            font-size: 12px;
-            font-weight: bold;
-            margin-top: 15px;
     }
+    .grid-menu-option.p_outOfStock {
+        color: gray;
+        background-color: #fff;
+        background-image: url("//secureimages.plussizetech.com/images/site_images/ksd/p_outOfStock.png");
+        background-repeat: no-repeat;
+        background-size: 92px 32px;
+    }
+}

@@ -9,34 +9,34 @@ var KSDBoxSwatches = (() => {
             function setDOMEvents() {
                 //console.log('setDOMEvents');
 
-                $('.KSD_button_tab-container__buttons--big').on('click', function () {
+                $('.grid_menu_tab-container__buttons--big').on('click', function () {
                     //console.log('big clicked');
                     var currentElm = $(this).closest('.ProductDetails').find('.big-tall-tab-new');
-                    $(this).parent().find('.KSD-button').removeClass('active');
+                    $(this).parent().find('.gridmenu-button').removeClass('active');
                     $(this).addClass('active');
                     $(currentElm).find('.big-radio input').click();
                     selectionOptionBig(currentElm);
                 });
-                $('.KSD_button_tab-container__buttons--tall').on('click', function () {
+                $('.grid_menu_tab-container__buttons--tall').on('click', function () {
                     //console.log('tall clicked');
                     var currentElm = $(this).closest('.ProductDetails').find('.big-tall-tab-new');
-                    $(this).parent().find('.KSD-button').removeClass('active');
+                    $(this).parent().find('.gridmenu-button').removeClass('active');
                     $(this).addClass('active');
                     $(currentElm).find('.tall-radio input').click();
                     selectOptionTall(currentElm);
                 });
-                $('span.swatch-2011').on('click', function (event) {
-                    var self = this;
-                    $(this).closest('.ProductDetails').find('.grid-menu-option').removeClass('p_outOfStock p_inStock');
-                    setTimeout(function () {
-                        $(self).closest('.ProductDetails').find('select.size option').each(function () {
-                            var optionValue = $(this).attr('value');
-                            var optionClassName = $(this).attr('class');
-                            $(self).closest('.ProductDetails').find(".grid-menu-option[data-value='" + optionValue + "']").addClass(optionClassName);
-                        });
-                    }, 0);
+                // $('span.swatch-2011').on('click', function (event) {
+                //     var self = this;
+                //     $(this).closest('.ProductDetails').find('.grid-menu-option').removeClass('p_outOfStock p_inStock');
+                //     setTimeout(function () {
+                //         $(self).closest('.ProductDetails').find('select.select-menu option').each(function () {
+                //             var optionValue = $(this).attr('value');
+                //             var optionClassName = $(this).attr('class');
+                //             $(self).closest('.ProductDetails').find(".grid-menu-option[data-value='" + optionValue + "']").addClass(optionClassName);
+                //         });
+                //     }, 0);
 
-                });
+                // });
             }
 
             function scaffoldKSDContainer() {
@@ -59,14 +59,13 @@ var KSDBoxSwatches = (() => {
 
                         tempDoc =
                             '<div class="KSD_wrapper" style="' + styles.KSD_wrapper + '">' +
-                            //'<div class="KSD_first_option_text select_size_color_label select-skip-count">' + $(this).closest('.KSDItemContainer').find(".select_size_color_label.select-size-label").text() + '</div>' +
                             '<div class="KSD_button_tab_container" style="' + styles.KSD_button_tab_container + '">' +
                             '<div class="KSD_button_tab_container__buttons" style="' + styles.KSD_button_tab_container__buttons + '">' +
-                            '<div class="KSD_button_tab-container__buttons--big  KSD-button" style="' + styles.KSD_button + '">BIG</div>' +
-                            '<div class="KSD_button_tab-container__buttons--tall KSD-button" style="' + styles.KSD_button + '">TALL</div>' +
+                            '<div class="grid_menu_tab-container__buttons--big  gridmenu-button" style="' + styles.KSD_button + '">BIG</div>' +
+                            '<div class="grid_menu_tab-container__buttons--tall gridmenu-button" style="' + styles.KSD_button + '">TALL</div>' +
                             '</div>' +
                             '</div>' +
-                            '<div class="KSD-swatch-block-container"></div>' +
+                            '<div class="grid-menu-swatch-block-container"></div>' +
                             '</div>'
                         ;
                     }
@@ -74,8 +73,7 @@ var KSDBoxSwatches = (() => {
 
                         tempDoc =
                             '<div class="KSD_wrapper" style="' + styles.KSD_wrapper + '">' +
-                            //'<div class="KSD_first_option_text select_size_color_label select-skip-count">' + $(this).closest('.KSDItemContainer').find(".select_size_color_label.select-size-label").text() + '</div>' +
-                            '<div class="KSD-swatch-block-container" style="' + styles.KSD_extra_margin_top + '"></div>' +
+                            '<div class="grid-menu-swatch-block-container" style="' + styles.KSD_extra_margin_top + '"></div>' +
                             '</div>'
                         ;
                     }
@@ -101,18 +99,18 @@ var KSDBoxSwatches = (() => {
                             }
                         }
                     });
-                    $(this).find('.KSD-swatch-block-container').append(tempTabSelection);
+                    $(this).find('.grid-menu-swatch-block-container').append(tempTabSelection);
                 });
                 if ($('.big-tall-tab-new')) {
 
                     for (var i = 0; i < $('.big-tall-tab-new').length; i++) {
                         var currentElm = $('.big-tall-tab-new')[i];
                         if ($(currentElm).find('.big-radio .on').length > 0) {
-                            $(currentElm).closest('.ProductDetails').find('.KSD_button_tab-container__buttons--big').addClass('active');
+                            $(currentElm).closest('.ProductDetails').find('.grid_menu_tab-container__buttons--big').addClass('active');
                             selectionOptionBig(currentElm);
                         }
                         else {
-                            $(currentElm).closest('.ProductDetails').find('.KSD_button_tab-container__buttons--tall').addClass('active');
+                            $(currentElm).closest('.ProductDetails').find('.grid_menu_tab-container__buttons--tall').addClass('active');
                             selectOptionTall(currentElm);
                         }
                     };
@@ -140,15 +138,15 @@ var KSDBoxSwatches = (() => {
 
                     $(this).closest('.ProductDetails').find('.grid-menu-option').removeClass('active');
                     $(this).addClass('active');
-                    $(this).closest('.ProductDetails').find('select.size option[selected="selected"]').removeAttr('selected');
-                    $(this).closest('.ProductDetails').find('select.size option[value="' + selectedOptionValue + '"]').attr('selected', 'selected');
-                    $(this).closest('.ProductDetails').find('select.size').trigger('change');
+                    $(this).closest('.ProductDetails').find('select.select-menu option[selected="selected"]').removeAttr('selected');
+                    $(this).closest('.ProductDetails').find('select.select-menu option[value="' + selectedOptionValue + '"]').attr('selected', 'selected');
+                    $(this).closest('.ProductDetails').find('select.select-menu').trigger('change');
                 });
             }
 
             function findUpdatedOption(currentElm) {
                 //console.log('findUpdatedOption');
-                $(currentElm).next('.ProductDetails').find('select.size option[selected="selected"]').removeAttr('selected');
+                $(currentElm).next('.ProductDetails').find('select.select-menu option[selected="selected"]').removeAttr('selected');
                 $(currentElm).next('.ProductDetails').find('.grid-menu-option').removeClass('active');
             }
 
