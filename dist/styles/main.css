@@ -1,3 +1,6 @@
+.ProductDetails {
+  margin-top: 25px;
+}
 .ProductDetails .grid_menu_tab-container__buttons--big.active,
 .ProductDetails .grid_menu_tab-container__buttons--tall.active {
   color: #fff !important;

@@ -25,6 +25,7 @@ var KSDBoxSwatches = (() => {
                     $(currentElm).find('.tall-radio input').click();
                     selectOptionTall(currentElm);
                 });
+                // Used with color swatches
                 // $('span.swatch-2011').on('click', function (event) {
                 //     var self = this;
                 //     $(this).closest('.ProductDetails').find('.grid-menu-option').removeClass('p_outOfStock p_inStock');
