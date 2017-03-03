@@ -24,7 +24,7 @@
   border: 1px solid #828282;
   padding: 10px;
 }
-.ProductDetails .KSD-swatch-block-container .KSD-select-option {
+.ProductDetails .KSD-swatch-block-container .grid-menu-option {
   display: inline-block;
   border: 1px solid #d4d3d5;
   line-height: 30px;
@@ -34,11 +34,11 @@
   margin: 0 8px 8px 0;
   cursor: pointer;
 }
-.ProductDetails .KSD-swatch-block-container .KSD-select-option.active {
+.ProductDetails .KSD-swatch-block-container .grid-menu-option.active {
   color: #fff;
   background-color: #000000;
 }
-.ProductDetails .KSD-swatch-block-container .KSD-select-option.p_outOfStock {
+.ProductDetails .KSD-swatch-block-container .grid-menu-option.p_outOfStock {
   color: gray;
   background-color: #fff;
   background-image: url("//secureimages.plussizetech.com/images/site_images/ksd/p_outOfStock.png");

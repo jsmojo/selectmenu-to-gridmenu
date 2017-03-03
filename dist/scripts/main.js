@@ -22,12 +22,12 @@ var KSDBoxSwatches = (function () {
             });
             $('span.swatch-2011').on('click', function (event) {
                 var self = this;
-                $(this).closest('.ProductDetails').find('.KSD-select-option').removeClass('p_outOfStock p_inStock');
+                $(this).closest('.ProductDetails').find('.grid-menu-option').removeClass('p_outOfStock p_inStock');
                 setTimeout(function () {
                     $(self).closest('.ProductDetails').find('select.size option').each(function () {
                         var optionValue = $(this).attr('value');
                         var optionClassName = $(this).attr('class');
-                        $(self).closest('.ProductDetails').find(".KSD-select-option[data-value='" + optionValue + "']").addClass(optionClassName);
+                        $(self).closest('.ProductDetails').find(".grid-menu-option[data-value='" + optionValue + "']").addClass(optionClassName);
                     });
                 }, 0);
             });
@@ -42,7 +42,7 @@ var KSDBoxSwatches = (function () {
                 KSD_button_active: "color: #fff; background-color: hsl(299, 49%, 0%);",
                 KSD_extra_margin_top: "margin-top: 10px;"
             };
-            $('.size').each(function () {
+            $('.select-menu').each(function () {
                 var tempDoc = document.createDocumentFragment();
                 if ($(this).closest('.ProductDetails').find('.big-tall-tab-new').length > 0) {
                     tempDoc =
@@ -72,13 +72,13 @@ var KSDBoxSwatches = (function () {
             $('.ProductDetails').each(function () {
                 var tempTabSelection = document.createDocumentFragment();
                 tempTabSelection = '';
-                $(this).find('select.size option').each(function () {
+                $(this).find('select.select-menu option').each(function () {
                     if ($(this).val() != '') {
                         if ($(this).is(":selected")) {
-                            tempTabSelection += "<div class='KSD-select-option groupOptionClass" + $(this).attr('optiongroup') + " " + $(this).attr('class') + " active' data-value='" + $(this).val() + "' optiongroup=" + $(this).attr('optiongroup') + ">" + $(this).text() + "</div>";
+                            tempTabSelection += "<div class='grid-menu-option groupOptionClass" + $(this).attr('optiongroup') + " " + $(this).attr('class') + " active' data-value='" + $(this).val() + "' optiongroup=" + $(this).attr('optiongroup') + ">" + $(this).text() + "</div>";
                         }
                         else {
-                            tempTabSelection += "<div class='KSD-select-option groupOptionClass" + $(this).attr('optiongroup') + " " + $(this).attr('class') + "' data-value='" + $(this).val() + "' optiongroup=" + $(this).attr('optiongroup') + ">" + $(this).text() + "</div>";
+                            tempTabSelection += "<div class='grid-menu-option groupOptionClass" + $(this).attr('optiongroup') + " " + $(this).attr('class') + "' data-value='" + $(this).val() + "' optiongroup=" + $(this).attr('optiongroup') + ">" + $(this).text() + "</div>";
                         }
                     }
                 });
@@ -101,21 +101,21 @@ var KSDBoxSwatches = (function () {
         }
         function selectionOptionBig(currentElm) {
             //console.log('selectionOptionBig');
-            $(currentElm).closest('.ProductDetails').find('.KSD-select-option.groupOptionClassT').css('display', 'none');
-            $(currentElm).closest('.ProductDetails').find('.KSD-select-option.groupOptionClassB').css('display', 'inline-block');
+            $(currentElm).closest('.ProductDetails').find('.grid-menu-option.groupOptionClassT').css('display', 'none');
+            $(currentElm).closest('.ProductDetails').find('.grid-menu-option.groupOptionClassB').css('display', 'inline-block');
             findUpdatedOption(currentElm);
         }
         function selectOptionTall(currentElm) {
             //console.log('selectOptionTall');
-            $(currentElm).closest('.ProductDetails').find('.KSD-select-option.groupOptionClassB').css('display', 'none');
-            $(currentElm).closest('.ProductDetails').find('.KSD-select-option.groupOptionClassT').css('display', 'inline-block');
+            $(currentElm).closest('.ProductDetails').find('.grid-menu-option.groupOptionClassB').css('display', 'none');
+            $(currentElm).closest('.ProductDetails').find('.grid-menu-option.groupOptionClassT').css('display', 'inline-block');
             findUpdatedOption(currentElm);
         }
         function bindTabSelection() {
             //console.log('bindTabSelection');
-            $('.KSD-select-option').on('click', function () {
+            $('.grid-menu-option').on('click', function () {
                 var selectedOptionValue = $(this).attr('data-value');
-                $(this).closest('.ProductDetails').find('.KSD-select-option').removeClass('active');
+                $(this).closest('.ProductDetails').find('.grid-menu-option').removeClass('active');
                 $(this).addClass('active');
                 $(this).closest('.ProductDetails').find('select.size option[selected="selected"]').removeAttr('selected');
                 $(this).closest('.ProductDetails').find('select.size option[value="' + selectedOptionValue + '"]').attr('selected', 'selected');
@@ -125,7 +125,7 @@ var KSDBoxSwatches = (function () {
         function findUpdatedOption(currentElm) {
             //console.log('findUpdatedOption');
             $(currentElm).next('.ProductDetails').find('select.size option[selected="selected"]').removeAttr('selected');
-            $(currentElm).next('.ProductDetails').find('.KSD-select-option').removeClass('active');
+            $(currentElm).next('.ProductDetails').find('.grid-menu-option').removeClass('active');
         }
         (function getStarted() {
             scaffoldKSDContainer();
