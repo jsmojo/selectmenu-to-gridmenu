@@ -10,7 +10,6 @@ let gutil = require("gulp-util");
 let tsc = require('gulp-typescript');
 let less = require('gulp-less');
 
-
 let reactify = require('reactify');
 
 let vendorJS = [
