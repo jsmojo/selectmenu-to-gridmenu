@@ -24,8 +24,8 @@ $ npm install
 $ gulp
 ```
 
-## Example with two size/product options
+### Example with two size/product options
 ![alt tag](https://github.com/jsmojo/selectmenu-to-gridmenu/blob/master/demo.jpg)
 
 
-second example
+### Exmaple with styling a dropdown select menu
