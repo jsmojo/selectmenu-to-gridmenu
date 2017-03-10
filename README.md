@@ -24,6 +24,7 @@ $ npm install
 $ gulp
 ```
 
+## Example with two size/product options
 ![alt tag](https://github.com/jsmojo/selectmenu-to-gridmenu/blob/master/demo.jpg)
 
 
